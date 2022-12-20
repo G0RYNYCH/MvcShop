@@ -2,6 +2,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddMvc();
+builder.Services.AddTransient<ICars, MockCars>();
+builder.Services.AddTransient<ICarsCategory, MockCategories>();
 
 var app = builder.Build();
 
